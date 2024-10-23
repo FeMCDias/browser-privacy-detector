@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  min-width: 300px;
+}
+
+h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#scan-button {
+  display: block;
+  margin-bottom: 15px;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#score-section {
+  margin-bottom: 20px;
+}
+
+#score-bar {
+  width: 100%;
+  height: 20px;
+}
+
+#details-section h3 {
+  margin: 10px 0 5px;
+}
+
+#details-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+#details-section p {
+  margin: 0 0 10px;
+}

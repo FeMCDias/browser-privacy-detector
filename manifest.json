@@ -1,36 +1,48 @@
 {
     "manifest_version": 2,
     "name": "Browser Privacy Detector",
-    "version": "1.0",
-    "description": "Detects privacy violations and attacks on web clients.",
+    "version": "1.1",
+    "description": "Detects privacy risks and attacks on web pages.",
+    "icons": {
+      "48": "icons/icon.png"
+    },
     "permissions": [
       "webRequest",
       "webRequestBlocking",
       "<all_urls>",
-      "storage",
       "tabs",
-      "activeTab",
-      "browserSettings",
-      "webNavigation"
+      "cookies",
+      "storage",
+      "activeTab"
     ],
+    "browser_action": {
+      "default_icon": {
+        "48": "icons/icon.png"
+      },
+      "default_title": "Browser Privacy Detector",
+      "default_popup": "popup/popup.html"
+    },
     "background": {
       "scripts": ["background.js"]
-    },
-    "browser_action": {
-      "default_icon": "icons/icon.png",
-      "default_popup": "popup.html"
     },
     "content_scripts": [
       {
         "matches": ["<all_urls>"],
-        "exclude_matches": ["about:*"],
-        "js": ["content_script.js"],
+        "js": [
+          "content-scripts/canvas-detection.js",
+          "content-scripts/hijack-detection.js"
+        ],
+        "run_at": "document_start",
+        "all_frames": true
+      },
+      {
+        "matches": ["<all_urls>"],
+        "js": [
+          "content-scripts/storage-detection.js"
+        ],
         "run_at": "document_idle",
         "all_frames": true
       }
-    ],
-    "icons": {
-      "48": "icons/icon.png"
-    }
+    ]
   }
   

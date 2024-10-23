@@ -7,6 +7,7 @@
 </head>
 <body>
   <h1>Privacy Report</h1>
+  <button id="scan-button">Scan Now</button>
   <div id="score-section">
     <h2>Privacy Score: <span id="privacy-score">--</span>/100</h2>
     <progress id="score-bar" value="0" max="100"></progress>
@@ -18,10 +19,16 @@
     </ul>
     <h3>Local Storage Items:</h3>
     <p id="local-storage-count">--</p>
-    <h3>Canvas Fingerprinting Attempts:</h3>
-    <p id="canvas-fingerprinting">--</p>
-    <h3>Potential Browser Hijacking Detected:</h3>
-    <p id="potential-hijack">--</p>
+    <h3>Canvas Fingerprinting Attempts: <span id="canvas-fp-count">0</span></h3>
+    <ul id="canvas-fp-list">
+      <!-- List of canvas fingerprinting events -->
+    </ul>
+    <h3>Potential Browser Hijacking Detected: <span id="hijack-count">0</span></h3>
+    <ul id="hijack-list">
+      <!-- List of hijack attempts -->
+    </ul>
+    <h3>Cookies:</h3>
+    <p id="cookies-info">--</p>
   </div>
   <script src="popup.js"></script>
 </body>
