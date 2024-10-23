@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Browser Privacy Detector</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h1>Privacy Report</h1>
+  <div id="score-section">
+    <h2>Privacy Score: <span id="privacy-score">--</span>/100</h2>
+    <progress id="score-bar" value="0" max="100"></progress>
+  </div>
+  <div id="details-section">
+    <h3>Third-Party Connections:</h3>
+    <ul id="third-party-list">
+      <li>--</li>
+    </ul>
+    <h3>Local Storage Items:</h3>
+    <p id="local-storage-count">--</p>
+    <h3>Canvas Fingerprinting Attempts:</h3>
+    <p id="canvas-fingerprinting">--</p>
+    <h3>Potential Browser Hijacking Detected:</h3>
+    <p id="potential-hijack">--</p>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

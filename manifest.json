@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "Browser Privacy Detector",
+    "version": "1.0",
+    "description": "Detects privacy violations and attacks on web clients.",
+    "permissions": [
+      "webRequest",
+      "webRequestBlocking",
+      "<all_urls>",
+      "storage",
+      "tabs",
+      "activeTab",
+      "browserSettings",
+      "webNavigation"
+    ],
+    "background": {
+      "scripts": ["background.js"]
+    },
+    "browser_action": {
+      "default_icon": "icons/icon.png",
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "exclude_matches": ["about:*"],
+        "js": ["content_script.js"],
+        "run_at": "document_idle",
+        "all_frames": true
+      }
+    ],
+    "icons": {
+      "48": "icons/icon.png"
+    }
+  }
+  
